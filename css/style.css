@@ -1,0 +1,182 @@
+body {
+  background: linear-gradient(to right, #ffffff, #ff9448);
+}
+
+#logo {
+  width: 155px;
+  height: 65px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 5%;
+}
+header {
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+}
+nav {
+  width: 250px;
+  height: 60px;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-evenly;
+}
+nav a {
+  color: #333;
+}
+#container {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding-top: 10px;
+
+ 
+}
+#content {
+  width: 90%;
+  height: 650px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: transparent;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+
+}
+table {
+  width: 65%;
+  height: 90%;
+  border-collapse: collapse;
+ 
+}
+
+
+table h1 {
+  font-size: 2.5em;
+  color: #333;
+}
+
+table p {
+  padding: 0%;
+  font-size: 1.5em;
+  text-align: left;
+  color: #333;
+}
+
+td {
+  padding: 0.5%;
+}
+.txt {
+  width: 100%;
+  height: 40px;
+  text-align: left;
+  background-color: transparent;
+  border-radius: 10px;
+  color: black;
+  font-size: 15px;
+  font: bold;
+  background: linear-gradient(to right ,#fff3ea ,#ffe6d3);
+}
+table textarea {
+  width: 100%;
+  height: 70px;
+  text-align: left;
+  background-color: transparent;
+  border-radius: 10px;
+  color: black;
+  font-size: 15px;
+  font: bold;
+  resize: none;
+  background: linear-gradient(to right ,#fff3ea ,#ffe6d3);
+}
+.terms {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0 0 0 0;
+  margin: 0 0 0 0;
+  text-align: left;
+}
+
+input[type="checkbox"] {
+  appearance: none; /* Remove default checkbox styling */
+  width: 20px;
+  height: 20px;
+  border-radius: 50%; /* Make it circular */
+  border: 2px solid rgb(255, 148, 72); /* Add a border */
+  outline: none;
+  cursor: pointer;
+  position: relative;
+}
+
+input[type="checkbox"]:checked {
+  background-color: #d9e0d9; /* Background color when checked */
+  border: 3px solid rgb(255, 148, 72); /* Border color when checked */
+}
+
+input[type="checkbox"]:checked::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgb(255, 148, 72); /* Inner circle when checked */
+}
+
+button {
+  width: 200px;
+  height: 50px;
+  font-size: 1.2em;
+  border-radius: 10px;
+  font: bold;
+  background-color: rgb(255, 148, 72);
+  color: #d9e0d9;
+  border: 0;
+}
+button:hover{
+  color: black;
+}
+
+.image-upload {
+  display: flex;
+  align-items: center;
+  padding: 0 0 0 0;
+  margin: 0 0 0 0;
+}
+
+.image-upload input[type="file"] {
+  display: none;
+}
+
+.image-upload label {
+  display: inline-block;
+  background-color: #fff3ea;
+  color: #333;
+  padding: 6px 10px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.image-upload label img{
+  color: #ff9448;
+  width: 12px;
+  height: 12px;
+}
+.image-upload label:hover {
+  background-color: #FF9448;
+}
