@@ -1,4 +1,33 @@
+main{
+    margin-top: -1.2%;
+    padding: 0;
+}
+#Top {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    
+    padding:0 40px 0 20px ;
+}
 
+#Top h1 {
+    margin-bottom: 20px;
+    font-size: 2em;
+    color: #333;
+   
+}
+
+#Top input[type="search"] {
+    width: 40%;
+    height: 40px;
+    max-width: 400px;
+    padding:10px;
+    font-size: 16px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    outline: none;
+}
 
 h1{
     padding-left: 2em;
@@ -14,24 +43,26 @@ h1{
    
 }
 #table2{
-    background-color: cornflowerblue;
+   
 }
 
 #parent{
     display: flex;
     flex-direction: row;
+    
 }
 
 #div1{
-    background-color: cadetblue;
+   
     width: 60%;
     display: flex;
     justify-content: center;
+    padding: 1%;
 
 }
 #div2{
-    background-color: cornflowerblue;
     width: 40%;
+    padding: 1%;
 }
 .crowdfunding-section h1 {
     font-size: 3rem;
@@ -61,6 +92,7 @@ h1{
     margin-left: 2rem;
     text-align: left;
     max-width: 300px;
+    padding: 10px;
 }
 
 .campaign-details h2 {
@@ -108,10 +140,11 @@ h1{
     display: flex;
     justify-content: space-around;
     margin-bottom: 2rem;
+    height: auto;
 }
 
 .campaign-card {
-    background-color: #f66b0e;
+    background-color: #FFFFFF;
     color: #fff;
     padding: 1rem;
     border-radius: 10px;
@@ -120,11 +153,18 @@ h1{
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+#campaign-parent-card{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
 .campaign-card img {
-    width: 100px;
-    height: 100px;
+    width: 200px;
+    height: 200px;
     border-radius: 50%;
     margin-bottom: 1rem;
+
+
 }
 
 .campaign-card p {
@@ -150,4 +190,9 @@ h1{
 
 .statistics p {
     margin: 0.5rem 0;
+}
+
+.statistics span:first-child {
+    font-size: 2em; /* Adjust the size as needed */
+    font-weight: bold; 
 }
