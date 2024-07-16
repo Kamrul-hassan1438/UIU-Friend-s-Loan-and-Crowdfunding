@@ -1,5 +1,5 @@
 main{
-    margin-top: -1.2%;
+    margin-top: 3%;
     padding: 0;
 }
 #Top {
@@ -25,7 +25,7 @@ main{
     padding:10px;
     font-size: 16px;
     border: 2px solid #ccc;
-    border-radius: 10px;
+    border-radius: 15px;
     outline: none;
 }
 
@@ -39,12 +39,7 @@ h1{
     justify-content: center;
     
 }
-#table1{
-   
-}
-#table2{
-   
-}
+
 
 #parent{
     display: flex;
