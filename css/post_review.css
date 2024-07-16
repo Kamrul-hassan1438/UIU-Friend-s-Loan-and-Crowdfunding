@@ -1,0 +1,78 @@
+main {
+  margin-top: 3%;
+  padding-top: 1%;
+}
+#Top {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 40px 0 20px;
+}
+
+#Top h1 {
+  margin-bottom: 20px;
+  font-size: 2em;
+  color: #333;
+}
+#parent {
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#select-container {
+  width: 80%;
+  text-align: center;
+
+}
+#select-container select {
+  width: 40%;
+  height: 45px;
+  background: linear-gradient(to right, #fff3ea, #ffe6d3);
+  border-radius: 10px;
+  border: 0;
+  font-size: 1em;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.4);
+}
+#write {
+  width: 80%;
+  padding: 50px 0 50px 0;
+  text-align: center;
+ 
+}
+#write textarea {
+  width: 90%;
+  height: 300px;
+  text-align: left;
+  background-color: transparent;
+  border-radius: 10px;
+  color: black;
+  font-size: 1.4em;
+  font: bold;
+  resize: none;
+  background: linear-gradient(to right, #fff3ea, #ffe6d3);
+}
+
+#sub{
+    width: 80%;
+    display: flex;
+    justify-content: center;
+}
+
+#sub button{
+    text-align: center;
+    width:150px;
+    height: 55px;
+    background-color: #FF9448;
+    color: #FFFFFF;
+    border-radius: 10px;
+    border: 0;
+    font-size: 1.4em;
+    font: bold;
+    box-shadow: 10px 15px 20px rgba(0, 0, 0, 0.6);
+}
+
+#sub button:hover{
+    color: #333;
+}
