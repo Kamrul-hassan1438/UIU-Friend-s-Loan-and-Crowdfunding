@@ -1,0 +1,35 @@
+#Detail{
+    width: 90%;
+    height: 280px;
+    display:flex;
+    flex-direction: row;
+    
+}
+
+
+#Detail:hover{
+    box-shadow: 10px 10px 10px 10px rgb(0,0,0,0.4);
+}
+#child1{
+    height: 100%;
+    text-align: center;
+    padding: 10px;
+   
+}
+#child1 img{
+    width: 180px;
+    height: 180px;
+}
+#child2{
+    height: 100%;
+    width: 50%;
+   
+    padding-left: 30px;
+    align-items: center;
+    font-size: 2em;
+}
+
+#more {
+    font-size: 1.5em;
+    padding-bottom: 0;
+}

@@ -1,8 +1,10 @@
-body {
-  background: linear-gradient(to right, #ffffff, #ff9448);
-  font-family: Arial, sans-serif;
+*{
   margin: 0;
   padding: 0;
+}
+body {
+  background: linear-gradient(to right, #FF9448, #FFFFFF);
+  font-family: Arial, sans-serif;
 }
 
 #logo {
@@ -15,13 +17,13 @@ body {
 }
 header {
   height: 60px;
-  width: 100dvw;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: row;
   justify-content: space-between;
-  position: fixed; /* Make the header fixed */
+  /*position: fixed;  Make the header fixed */
   top: 0; /* Position it at the top */
   left: 0;
   background-color: transparent; /* Add background color to ensure it is visible */
@@ -30,7 +32,7 @@ header {
 }
 
 nav {
-  width: 350px;
+  width: 450px;
   height: 60px;
   font-size: 18px;
   display: flex;
@@ -45,13 +47,13 @@ nav a {
 }
 #container {
   margin-top:3.5% ;
+  margin-bottom: 3.5%;
   padding: 0;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
   padding-top: 10px;
-
  
 }
 #content {
@@ -63,7 +65,7 @@ nav a {
   align-items: center;
   text-align: center;
   background-color: transparent;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.2);
 
 }
 table {
@@ -104,6 +106,7 @@ table textarea {
   width: 100%;
   height: 70px;
   text-align: left;
+  padding-left: 1%;
   background-color: transparent;
   border-radius: 10px;
   color: black;
@@ -111,6 +114,7 @@ table textarea {
   font: bold;
   resize: none;
   background: linear-gradient(to right ,#fff3ea ,#ffe6d3);
+  border: none;
 }
 .terms {
   display: flex;
@@ -120,7 +124,13 @@ table textarea {
   margin: 0 0 0 0;
   text-align: left;
 }
-
+.terms label{
+padding-left: 1%;
+}
+input{
+  border: none;
+  padding-left: 1%;
+}
 input[type="checkbox"] {
   appearance: none; /* Remove default checkbox styling */
   width: 20px;

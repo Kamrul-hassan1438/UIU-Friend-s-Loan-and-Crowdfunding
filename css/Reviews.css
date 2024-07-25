@@ -84,6 +84,14 @@ h1 {
   padding: 5px;
   border: 0;
 }
+
+.card button:hover{
+  color: #ffffff;
+  background-color: #333;
+  
+}
+
+
 #next{
   color: #f66b0e;
   width: 50px;
