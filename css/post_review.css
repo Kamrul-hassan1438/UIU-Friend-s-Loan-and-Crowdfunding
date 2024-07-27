@@ -51,7 +51,10 @@ main {
   font-size: 1.4em;
   font: bold;
   resize: none;
+  padding-top:1% ;
+  padding-left: 1%;
   background: linear-gradient(to right, #fff3ea, #ffe6d3);
+  border: none;
 }
 
 #sub{
