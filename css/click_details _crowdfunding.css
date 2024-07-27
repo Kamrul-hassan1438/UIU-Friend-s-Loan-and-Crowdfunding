@@ -1,0 +1,76 @@
+#container1 {
+  width: 100%;
+}
+
+#child1 {
+  width: 100%;
+  padding-top: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#child1 img {
+  width: 500px;
+  height: 260px;
+
+  padding-right: 30px;
+}
+#child1 p {
+  margin-left: 0;
+  width: 700px;
+  height: 200px;
+  font-size: 3.5em;
+}
+
+
+#child2 {
+  width: 100%;
+  padding-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#child2 p {
+  width: 80%;
+  font-size: 1.2em;
+
+  color: #000;
+}
+#child2 a {
+  color: #fff;
+}
+
+#child3 {
+  width: 100%;
+  padding-top: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+table {
+  width: 40%;
+
+  display: flex;
+  justify-content: center;
+}
+tr {
+  text-align: center;
+  width: 100%;
+}
+td {
+  padding: 5px;
+}
+#child3 button {
+  width: 150px;
+  height: 45px;
+  background-color: #fff;
+  color: #ff9448;
+  border-radius: 15px;
+  border: none;
+  font-size: 1.6em;
+}
+
+#child3 button:hover {
+  background-color: #000;
+  color: #fff;
+}

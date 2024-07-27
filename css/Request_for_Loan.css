@@ -74,6 +74,14 @@
   font-size: 1.2em;
 }
 
+#Right_side button:hover{
+  background-color: #000000;
+  color: #ffffff;
+}
+
 #Right_side p {
   font-size: 0.9em;
+}
+#Right_side a{
+  color:#ff9448 ;
 }
