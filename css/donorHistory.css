@@ -1,0 +1,47 @@
+#container2{
+    height: 400px;
+    width: 400px;
+    padding: 20px;
+    overflow-y: auto;
+    margin-top: 20px;
+}
+#container1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+}
+
+#backtoD{
+    margin-top: 20px;
+    margin-right: 200px;
+}
+button{
+    background-color: #f66b0e;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    margin-top: 20px;
+    width: 200px;
+    height: 45px;
+    border-radius: 10px;
+    font-size: large;
+}
+table {
+    width: 100%;
+    margin-bottom: 20px;
+    border-collapse: collapse;
+}
+table, th, td {
+    border: none;
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+    font-size: 18px;
+}
+
+th {
+    font-weight: bold;
+}

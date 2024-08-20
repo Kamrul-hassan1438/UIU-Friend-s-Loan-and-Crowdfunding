@@ -1,0 +1,67 @@
+
+.payment-container {
+    margin: 5% 0 0 40%;
+    background-color: #FFF1E6;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+.icon-container {
+    margin-bottom: 20px;
+}
+img{
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    margin: 2%;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+input[type="text"],
+input[type="password"] {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+button {
+    padding: 10px;
+    background-color: #FF6F3C;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+button:hover {
+    background-color: #FF5722;
+}
+
+.alternative-payment {
+    display: block;
+    margin-top: 20px;
+    color: #FF6F3C;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.alternative-payment:hover {
+    text-decoration: underline;
+}
