@@ -1,0 +1,114 @@
+.main-content {
+    display: flex;
+    justify-content: flex-start; /* Align items to the left */
+    align-items: flex-start;
+    padding: 20px;
+}
+.notification-section {
+    width: 60%;
+    background-color: #FFFFFF;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+    margin-left: 20px; /* Space between notification and profile */
+    height: 400px; /* Set a fixed height */
+    overflow-y: auto; /* Enable vertical scroll */
+}
+.profile-section, .notification-section {
+    background-color: #FFFFFF;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.profile-section {
+    width: 30%;
+    text-align: center;
+}
+
+.profile-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.profile-pic {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+.profile-card h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.profile-card p {
+    margin-bottom: 8px;
+    font-size: 16px;
+}
+
+.profile-btn {
+    background-color: #FF914D;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+.notification-section {
+
+    width: 60%;
+}
+
+.notification-section h2 {
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
+.notifications .notification {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    margin-bottom: 10px;
+    background-color: #FDD5B1;
+    border-radius: 8px;
+}
+
+.notifications .notification span {
+    font-size: 16px;
+}
+
+.notifications .btn {
+    background-color: #FF914D;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.action-buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.action-btn {
+    background-color: #FF914D;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 5px;
+    margin: 0 15px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.action-btn:hover {
+    background-color: #FF6A00;
+}

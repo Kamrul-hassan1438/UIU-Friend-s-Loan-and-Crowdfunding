@@ -26,13 +26,22 @@
           </header>
         
         <div class="form-container">
-            <h2>Demand your offer</h2>
-            <form>
-                <input type="text" placeholder="your expected offer" required>
-                <input type="text" placeholder="Percentage of interest" required>
-                <textarea placeholder="others" required></textarea>
-                <button type="submit">Done</button>
-            </form>
+          <h1>Submit your offer</h1>
+          <form>
+              <label for="return-date">Expected Return Date</label>
+              <input type="date" id="return-date" name="return-date" required>
+
+              <label for="interest">Percentage of Interest</label>
+              <input type="number" id="interest" name="interest" placeholder="Percentage of interest" required>
+
+              <label for="installment">Number of Installments</label>
+              <input type="number" id="installment" name="installment" placeholder="Number of installments" required>
+
+              <label for="others">Others</label>
+              <textarea id="others" name="others" rows="4" placeholder="Additional information"></textarea>
+
+              <button type="submit">Done</button>
+          </form>
         </div>
     </div>
 </body>
