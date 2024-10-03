@@ -32,20 +32,23 @@
 }
 
 #Right_side {
-  width: 38%;
+  width: 40%;
   height: 90%;
   display: flex;
   justify-content: center;
   align-items: center;
- 
+  padding: 5%;
+  
 }
 
 #Right_side table {
-  width: 90%;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: transparent;
+  padding-left: 20%;
+  padding-right: 20%;
   box-shadow: 5px 5px 5px 5px rgb(0, 0, 0, 0.2);
 }
 #Right_side h1 {
