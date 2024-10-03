@@ -18,24 +18,27 @@
 
     <div id="container1">
       <div id="Right_side">
-        <table>
-          <tr>
-            <td><h1>Login</h1></td>
-          </tr>
-          <tr>
-            <td><input type="text" placeholder="username" /></td>
-          </tr>
-          <tr>
-            <td><input type="password" placeholder="password" /></td>
-          </tr>
-            <td><button>Login</button></td>
-          </tr>
-          <tr>
-            <td>
-              <p>Don’t have account, <a href="Signup.html">signup</a> here.</p>
-            </td>
-          </tr>
-        </table>
+        <form action="login.php" method="POST">
+          <table>
+            <tr>
+              <td><h1>Login</h1></td>
+            </tr>
+            <tr>
+              <td><input type="email" name="email" placeholder="Email" required /></td> 
+            </tr>
+            <tr>
+              <td><input type="password" name="password" placeholder="Password" required /></td>
+            </tr>
+            <tr>
+              <td><button type="submit">Login</button></td>
+            </tr>
+            <tr>
+              <td>
+                <p>Don’t have an account? <a href="Signup.html">Signup</a> here.</p>
+              </td>
+            </tr>
+          </table>
+        </form>        
       </div>
     </div>
   </body>
