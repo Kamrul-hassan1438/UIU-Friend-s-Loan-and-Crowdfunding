@@ -1,65 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Request for a loan</title>
 
-    <link rel="icon" href="img\social-support .png" type="image/x-icon" />
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/Request_for_Loan.css" />
-  </head>
-  <body>
+    <link rel="icon" href="img/social-support.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/Request_for_Loan.css">
+</head>
+<body>
     <header>
-      <div>
-        <img src="img/Brand Logo 1.png" alt="" id="logo" />
-      </div>
-      <nav>
-        <a href="HomePage.html">Home</a>
+        <div>
+            <img src="img/Brand Logo 1.png" alt="" id="logo">
+        </div>
+        <nav>
+            <a href="HomePage.php">Home</a>
             <a href="Donation.html">Crowdfunding</a>
             <a href="Reviews.html">Reviews</a>
             <a href="Dashboard.html">Dashboard</a>
             <a href="login.html">Logout</a>
-      </nav>
+        </nav>
     </header>
 
     <div id="container1">
-      <div id="Right_side">
-        <table>
-          <tr>
-            <td><h1>Request for a loan</h1></td>
-          </tr>
-          <tr class="in">
-            <td><input type="number" placeholder="Amount" /></td>
-          </tr>
-          <tr class="in">
-            <td><input type="date" placeholder="Expected return date " /></td>
-          </tr>
-          <tr class="in">
-            <td><input type="password" placeholder="password" /></td>
-          </tr>
-
-          <tr>
-            <td>
-              <div class="check">
-                <input type="checkbox" id="terms" required />
-                <label>I agreed to the <a href="">terms and conditions </a>and willing to proceed further </label>
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <br>
-              <br>
-              <br>
-              <br>
-              <br>
-              <br>
-              <button>Request</button></td>
-            </td>
-          </tr>
-        </table>
-      </div>
+        <div id="Right_side">
+            <form action="submit_loan_request.php" method="POST" enctype="multipart/form-data">
+                <table>
+                    <tr>
+                        <td><h1>Request for a Loan</h1></td>
+                    </tr>
+                    <tr class="in">
+                        <td><input type="number" name="amount" placeholder="Amount" required></td>
+                    </tr>
+                    <tr class="in">
+                        <td><input type="date" name="expected_return_date" placeholder="Expected return date" required></td>
+                    </tr>
+                    <tr class="in">
+                        <td><textarea name="description" placeholder="Describe the reason for the loan" required></textarea></td>
+                    </tr>
+                    <tr class="in">
+                        <td><input type="file" name="document" accept="image/*,application/pdf"></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="check">
+                                <input type="checkbox" id="terms" required>
+                                <label>I agree to the <a href="#">terms and conditions</a> and am willing to proceed further</label>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><button type="submit">Request</button></td>
+                    </tr>
+                </table>
+            </form>
+        </div>
     </div>
-  </body>
+</body>
 </html>

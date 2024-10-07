@@ -1,11 +1,12 @@
 <?php
-session_start();
+session_start(); // Start the session
 
 $servername = "localhost";
 $username = "root";
 $password = "";
 $dbname = "uiu-friends-loan-and-crowdfunding";
 
+// Create a connection
 $conn = new mysqli($servername, $username, $password, $dbname);
 
 // Check connection
@@ -17,16 +18,23 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $email = $conn->real_escape_string($_POST['email']);
     $password = $conn->real_escape_string($_POST['password']);
 
-    // Fetch user details from the database based on the email
-    $sql = "SELECT * FROM users WHERE email = '$email'";
-    $result = $conn->query($sql);
+    // Prepare a SQL statement to prevent SQL injection
+    $stmt = $conn->prepare("SELECT * FROM users WHERE email = ?");
+    $stmt->bind_param("s", $email);
+    $stmt->execute();
+    $result = $stmt->get_result();
 
+    // Check if the user exists
     if ($result->num_rows > 0) {
         $user = $result->fetch_assoc();
 
         // Verify the password
         if (password_verify($password, $user['password_hash'])) {
+            // Regenerate session ID to prevent session fixation
+            session_regenerate_id();
+
             // Set session variables for the logged-in user
+            $_SESSION['user_id'] = $user['user_id'];
             $_SESSION['username'] = $user['username'];
             $_SESSION['email'] = $user['email'];
             $_SESSION['uiu_id'] = $user['uiu_id'];
@@ -42,6 +50,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     } else {
         echo "No account found with that email.";
     }
+
+    $stmt->close();
 }
 
 $conn->close();

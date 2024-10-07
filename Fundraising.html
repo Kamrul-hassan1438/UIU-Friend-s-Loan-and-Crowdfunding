@@ -3,125 +3,79 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>crowdfunding</title>
-    <link rel="icon" href="img\social-support .png" type="image/x-icon" />
+    <title>Start Crowdfunding</title>
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
     <header>
       <div>
-        <img src="img/Brand Logo 1.png" alt="" id="logo" />
+        <img src="img/Brand_Logo_1.png" alt="" id="logo" />
       </div>
       <nav>
-        <a href="HomePage.html">Home</a>
-            <a href="Donation.html">Crowdfunding</a>
-            <a href="Reviews.html">Reviews</a>
-            <a href="Dashboard.html">Dashboard</a>
-            <a href="login.html">Logout</a>
+        <a href="HomePage.php">Home</a>
+        <a href="Donation.html" style="color: azure;">Crowdfunding</a>
+        <a href="Reviews.html">Reviews</a>
+        <a href="Dashboard.php">Dashboard</a>
+        <a href="login.html">Logout</a>
       </nav>
     </header>
+
     <div id="container">
       <div id="content">
-        <table>
-          <tr>
-            <th><h1>Start a crowdfunding</h1></th>
-          </tr>
-          <tr>
-            <td>
-              <p>Kindly fill-up all the information for start a fundraising</p>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <input
-                class="txt"
-                type="text"
-                placeholder="Title of fundraising"
-                required
-              />
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <input
-                class="txt"
-                type="number"
-                placeholder="Targeted Amount"
-                required
-              />
-            </td>
-          </tr>
-
-          <tr>
-            <td>
-              <input
-                class="txt"
-                type="datetime"
-                placeholder="Deadline"
-                required
-              />
-            </td>
-          </tr>
-
-          <tr>
-            <td>
-              <textarea
-                placeholder="Details about the fundraising"
-                rows="4"
-                required
-              ></textarea>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <div class="image-upload">
-                <label for="file-input"
-                  >Insert Image <img src="Dropdown.png" alt=""
-                /></label>
-                <input
-                  type="file"
-                  id="file-input"
-                  accept="image/*"
-                  placeholder="Insert Image"
-                />
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <div class="terms">
-                <input type="checkbox" id="terms" required />
-                <label>I am obliged to the Terms and Condition</label>
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <button
-                id="submit_button"
-                type="submit"
-                onclick="printsomething()"
-              >
-                Start crowdfunding
-              </button>
-            </td>
-          </tr>
-        </table>
+        <form action="submit_crowdfunding.php" method="POST" enctype="multipart/form-data">
+          <table>
+            <tr>
+              <th><h1>Start a Crowdfunding</h1></th>
+            </tr>
+            <tr>
+              <td>
+                <p>Fill in all the required information to start a fundraiser.</p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <input class="txt" type="text" name="title" placeholder="Title of fundraising" required />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <input class="txt" type="number" name="target_amount" placeholder="Target Amount" required />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <input class="txt" type="date" name="deadline" placeholder="Deadline" required />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <textarea name="description" placeholder="Details about the fundraising" rows="4" required></textarea>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <div class="image-upload">
+                  <label for="file-input">Insert Image</label>
+                  <input type="file" id="file-input" name="image" accept="image/*" />
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <div class="terms">
+                  <input type="checkbox" id="terms" required />
+                  <label for="terms">I agree to the Terms and Conditions</label>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <button id="submit_button" type="submit">Start Crowdfunding</button>
+              </td>
+            </tr>
+          </table>
+        </form>
       </div>
     </div>
-
-    <script>
-      document
-        .getElementById("file-input")
-        .addEventListener("change", function (event) {
-          const file = event.target.files[0];
-          if (file) {
-            console.log("Selected file:", file.name);
-            // Handle the selected image file here
-          }
-        });
-
-      const printsomething = () => console.log("ehlo");
-    </script>
   </body>
 </html>
