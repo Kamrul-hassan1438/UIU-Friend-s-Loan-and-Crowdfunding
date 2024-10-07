@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 07, 2024 at 06:30 PM
+-- Generation Time: Oct 08, 2024 at 12:07 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -77,9 +77,19 @@ CREATE TABLE `loanoffers` (
   `interest_rate` decimal(5,2) DEFAULT NULL,
   `due_date` date DEFAULT NULL,
   `installments` int(11) DEFAULT NULL,
+  `additional_info` text DEFAULT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
   `status` enum('pending','accepted','rejected') DEFAULT 'pending'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `loanoffers`
+--
+
+INSERT INTO `loanoffers` (`offer_id`, `loan_id`, `lender_id`, `amount_offered`, `interest_rate`, `due_date`, `installments`, `additional_info`, `created_at`, `status`) VALUES
+(10, 15, 8, 0.00, 5.00, '2024-11-28', 3, 'Please give me the money', '2024-10-07 21:40:11', 'pending'),
+(11, 13, 8, 0.00, 3.00, '2024-10-31', 1, 'q', '2024-10-07 21:43:34', 'pending'),
+(12, 13, 8, 0.00, 10.00, '2024-10-31', 2, '', '2024-10-07 21:57:14', 'pending');
 
 -- --------------------------------------------------------
 
@@ -103,11 +113,9 @@ CREATE TABLE `loans` (
 --
 
 INSERT INTO `loans` (`loan_id`, `user_id`, `amount`, `expected_return_date`, `description`, `document`, `status`, `created_at`) VALUES
-(5, 8, 2000.00, '2024-10-31', 'Need catfood for my cat', 'uploads/loans.png', 'pending', '2024-10-05 06:35:59'),
-(6, 8, 5000.00, '2024-10-30', 'ert', 'uploads/loans.png', 'pending', '2024-10-05 06:47:32'),
-(7, 8, 5000.00, '2024-10-31', 'Therty', 'uploads/loans.png', 'pending', '2024-10-05 06:48:03'),
-(8, 6, 5000.00, '2024-10-28', 'Need Money, I am Poor :(', 'uploads/Sad Cat.png', 'pending', '2024-10-05 06:52:50'),
-(9, 6, 5000.00, '2024-11-30', 'Poor me', 'uploads/Crying cat.png', 'pending', '2024-10-05 06:58:02');
+(13, 6, 1200.00, '2024-10-31', 'Hello', 'uploads/Sad Cat.png', 'pending', '2024-10-07 21:03:21'),
+(15, 6, 400.00, '2024-10-30', 'Hello Give me the money', 'uploads/Sad Cat.png', 'pending', '2024-10-07 21:38:32'),
+(16, 6, 7000.00, '2024-11-30', 'I am poor :(', 'uploads/Sad Cat.png', 'pending', '2024-10-07 21:39:14');
 
 -- --------------------------------------------------------
 
@@ -136,7 +144,8 @@ CREATE TABLE `repayments` (
   `lender_id` int(11) DEFAULT NULL,
   `repayment_amount` decimal(10,2) DEFAULT NULL,
   `repayment_date` timestamp NOT NULL DEFAULT current_timestamp(),
-  `installment_number` int(11) DEFAULT NULL
+  `installment_number` int(11) DEFAULT NULL,
+  `loanoffer_id` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -213,7 +222,8 @@ ALTER TABLE `notifications`
 ALTER TABLE `repayments`
   ADD PRIMARY KEY (`repayment_id`),
   ADD KEY `loan_id` (`loan_id`),
-  ADD KEY `lender_id` (`lender_id`);
+  ADD KEY `lender_id` (`lender_id`),
+  ADD KEY `fk_loanoffer` (`loanoffer_id`);
 
 --
 -- Indexes for table `users`
@@ -243,13 +253,13 @@ ALTER TABLE `crowdfundings`
 -- AUTO_INCREMENT for table `loanoffers`
 --
 ALTER TABLE `loanoffers`
-  MODIFY `offer_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `offer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `loans`
 --
 ALTER TABLE `loans`
-  MODIFY `loan_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `loan_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `notifications`
@@ -309,6 +319,7 @@ ALTER TABLE `notifications`
 -- Constraints for table `repayments`
 --
 ALTER TABLE `repayments`
+  ADD CONSTRAINT `fk_loanoffer` FOREIGN KEY (`loanoffer_id`) REFERENCES `loanoffers` (`offer_id`),
   ADD CONSTRAINT `repayments_ibfk_1` FOREIGN KEY (`loan_id`) REFERENCES `loans` (`loan_id`),
   ADD CONSTRAINT `repayments_ibfk_2` FOREIGN KEY (`lender_id`) REFERENCES `users` (`user_id`);
 COMMIT;
