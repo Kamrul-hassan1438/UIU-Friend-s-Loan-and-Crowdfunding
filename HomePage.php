@@ -77,35 +77,35 @@ $profile_image = $_SESSION['profile_image'] ?: 'img/default-profile.png';  // Us
                 <div class="notifications">
                     <div class="notification">
                         <span>🔔 Sabrina Afrin requested for 6000 BDT</span>
-                        <button class="btn">Send your offer</button>
+                        <button class="btn">Action</button>
                     </div>
                     <div class="notification">
                         <span>🔔 Kamrul Hassan started a fundraising</span>
-                        <button class="btn">Click for details</button>
+                        <button class="btn">Action</button>
                     </div>
                     <div class="notification">
                         <span>🔔 Maaz Bin Hossain reviewed your request</span>
-                        <button class="btn">Check the offer</button>
+                        <button class="btn">Action</button>
                     </div>
                     <div class="notification">
                         <span>🔔 Sabit Molla requested for 6000 BDT</span>
-                        <button class="btn">Send your offer</button>
+                        <button class="btn">Action</button>
                     </div>
                     <div class="notification">
                         <span>🔔 Sabit Molla requested for 6000 BDT</span>
-                        <button class="btn">Send your offer</button>
+                        <button class="btn">Action</button>
                     </div>
                     <div class="notification">
                         <span>🔔 Sabit Molla requested for 6000 BDT</span>
-                        <button class="btn">Send your offer</button>
+                        <button class="btn">Action</button>
                     </div>
                     <div class="notification">
                         <span>🔔 Sabit Molla requested for 6000 BDT</span>
-                        <button class="btn">Send your offer</button>
+                        <button class="btn">Action</button>
                     </div>
                     <div class="notification">
                         <span>🔔 Sabit Molla requested for 6000 BDT</span>
-                        <button class="btn">Send your offer</button>
+                        <button class="btn">Action</button>
                     </div>
                 </div>
             </div>
