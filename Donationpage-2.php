@@ -93,8 +93,7 @@ $result = mysqli_query($conn, $query);
         <nav>
             <a href="HomePage.php">Home</a>
             <a href="Donation.html" style="color: azure;">Crowdfunding</a>
-            <a href="Reviews.html">Reviews</a>
-            <a href="Dashboard.html">Dashboard</a>
+            <a href="Dashboard.php">Dashboard</a>
             <a href="login.html">Logout</a>
         </nav>
     </header>

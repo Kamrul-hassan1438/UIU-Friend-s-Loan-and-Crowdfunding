@@ -20,7 +20,7 @@ if ($conn->connect_error) {
 $logged_in_user_id = $_SESSION['user_id'];
 
 
-$query = "SELECT loans.loan_id, loans.amount, loans.document, loans.expected_return_date, users.username, users.uiu_id
+$query = "SELECT loans.loan_id, loans.amount, loans.document, loans.expected_return_date, users.username, users.uiu_id 
           FROM loans
           JOIN users ON loans.user_id = users.user_id
           WHERE loans.status = 'pending' AND loans.user_id != ?"; 

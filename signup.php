@@ -57,7 +57,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     // Check if the query was successful
     if ($conn->query($sql) === TRUE) {
-        echo "Signup successful! You can now <a href='login.html'>login</a>";
+            header("Location: login.html");
+            exit(); 
+        
     } else {
         echo "Error: " . $sql . "<br>" . $conn->error;
     }

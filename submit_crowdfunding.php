@@ -33,7 +33,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
           VALUES ('$user_id', '$title', '$target_amount', '$description', '$deadline', '$image_path', 0)";
 
     if (mysqli_query($conn, $query)) {
-        echo "Crowdfunding request submitted successfully!";
+        header("Location: Dashboard.php");
     } else {
         echo "Error: " . mysqli_error($conn);
     }

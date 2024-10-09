@@ -5,20 +5,95 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Start Crowdfunding</title>
     <link rel="stylesheet" href="css/style.css" />
+    <style>#container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: calc(100vh - 100px); /* Adjust based on header height */
+      padding: 20px;
+  }
+  
+  #content {
+    background-color: rgba(255, 255, 255, 0.5); /* White with 80% opacity */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px; 
+  }
+  
+  h1 {
+      text-align: center;
+      color: #333;
+  }
+  
+  p {
+      text-align: center;
+      color: #666;
+  }
+  
+  table {
+      width: 100%;
+  }
+  
+  input.txt,
+  textarea {
+      width: calc(100% - 20px);
+      padding: 10px;
+      margin: 10px 0; /* Spacing around input fields */
+      border: 1px solid #ccc;
+      border-radius: 5px;
+  }
+  
+  input.txt:focus,
+  textarea:focus {
+      border-color: #333;
+      outline: none; /* Remove outline */
+  }
+  
+  .image-upload {
+      text-align: center;
+  }
+  
+  .image-upload label {
+      background-color: #007bff; /* Blue background for the label */
+      color: #fff;
+      padding: 10px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+  }
+  
+  .image-upload input[type="file"] {
+      display: none; /* Hide default file input */
+  }
+  
+  .terms {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+  }
+  
+  .terms input[type="checkbox"] {
+      margin-right: 10px;
+  }
+  
+  #submit_button {
+      width: 100%;
+      padding: 10px;
+      background-color:  #ff9448; /* Green background for the submit button */
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+  }
+  
+  #submit_button:hover {
+      background-color: #ff8025; /* Darker green on hover */
+  }</style>
   </head>
   <body>
-    <header>
-      <div>
-        <img src="img/Brand_Logo_1.png" alt="" id="logo" />
-      </div>
-      <nav>
-        <a href="HomePage.php">Home</a>
-        <a href="Donation.html" style="color: azure;">Crowdfunding</a>
-        <a href="Reviews.html">Reviews</a>
-        <a href="Dashboard.php">Dashboard</a>
-        <a href="login.html">Logout</a>
-      </nav>
-    </header>
+    
 
     <div id="container">
       <div id="content">

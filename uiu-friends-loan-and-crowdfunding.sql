@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 08, 2024 at 12:07 AM
+-- Generation Time: Oct 09, 2024 at 03:46 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -53,16 +53,6 @@ CREATE TABLE `crowdfundings` (
   `image` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Dumping data for table `crowdfundings`
---
-
-INSERT INTO `crowdfundings` (`crowdfunding_id`, `user_id`, `title`, `description`, `target_amount`, `collected_amount`, `created_at`, `deadline`, `image`) VALUES
-(2, 8, 'Help Nigga', 'To help the niggas around you', 2000.00, 0.00, '2024-10-05 06:10:22', '2024-10-31', NULL),
-(3, 8, 'Help Niggas (02)', 'tttttttttttt', 2000.00, 0.00, '2024-10-05 06:29:46', '2024-10-31', 'uploads/Screenshot 2024-09-26 105248.png'),
-(4, 8, 'Lets Helps the Cats', 'The poem uses a short rhythmic dialogue to describe how cats get or choose their names. It states that \"a cat must have THREE DIFFERENT NAMES\"; specifically, one that is \"familiar\", one that is \"particular\", and one that is \"secretive\".[2] English professor Dorothy Dodge Robbins noted that the many examples of feline names given in the poem by the Missouri-born poet were heavily influenced by his love and adoption of British culture: \"After all, his are the monikers of distinctly London cats; they are not the practical names of Midwestern barn cats.', 5000.00, 0.00, '2024-10-05 06:37:17', '2024-10-31', 'uploads/loans.png'),
-(5, 6, 'Lets Helps the Cats -3', 'Kamrul Is a Nigga', 50000.00, 0.00, '2024-10-05 18:18:51', '2024-10-30', '');
-
 -- --------------------------------------------------------
 
 --
@@ -81,15 +71,6 @@ CREATE TABLE `loanoffers` (
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
   `status` enum('pending','accepted','rejected') DEFAULT 'pending'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `loanoffers`
---
-
-INSERT INTO `loanoffers` (`offer_id`, `loan_id`, `lender_id`, `amount_offered`, `interest_rate`, `due_date`, `installments`, `additional_info`, `created_at`, `status`) VALUES
-(10, 15, 8, 0.00, 5.00, '2024-11-28', 3, 'Please give me the money', '2024-10-07 21:40:11', 'pending'),
-(11, 13, 8, 0.00, 3.00, '2024-10-31', 1, 'q', '2024-10-07 21:43:34', 'pending'),
-(12, 13, 8, 0.00, 10.00, '2024-10-31', 2, '', '2024-10-07 21:57:14', 'pending');
 
 -- --------------------------------------------------------
 
@@ -113,9 +94,8 @@ CREATE TABLE `loans` (
 --
 
 INSERT INTO `loans` (`loan_id`, `user_id`, `amount`, `expected_return_date`, `description`, `document`, `status`, `created_at`) VALUES
-(13, 6, 1200.00, '2024-10-31', 'Hello', 'uploads/Sad Cat.png', 'pending', '2024-10-07 21:03:21'),
-(15, 6, 400.00, '2024-10-30', 'Hello Give me the money', 'uploads/Sad Cat.png', 'pending', '2024-10-07 21:38:32'),
-(16, 6, 7000.00, '2024-11-30', 'I am poor :(', 'uploads/Sad Cat.png', 'pending', '2024-10-07 21:39:14');
+(5, 1, 5.00, '2024-10-23', 'd', 'uploads/Sad Cat.png', 'approved', '2024-10-09 01:34:36'),
+(6, 3, 700.00, '2024-10-23', 'ui', 'uploads/Sad Cat.png', 'approved', '2024-10-09 01:41:41');
 
 -- --------------------------------------------------------
 
@@ -130,22 +110,6 @@ CREATE TABLE `notifications` (
   `notification_type` enum('crowdfunding','loan','repayment') NOT NULL,
   `is_read` tinyint(1) DEFAULT 0,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `repayments`
---
-
-CREATE TABLE `repayments` (
-  `repayment_id` int(11) NOT NULL,
-  `loan_id` int(11) DEFAULT NULL,
-  `lender_id` int(11) DEFAULT NULL,
-  `repayment_amount` decimal(10,2) DEFAULT NULL,
-  `repayment_date` timestamp NOT NULL DEFAULT current_timestamp(),
-  `installment_number` int(11) DEFAULT NULL,
-  `loanoffer_id` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -170,10 +134,10 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`user_id`, `username`, `email`, `password_hash`, `uiu_id`, `profile_image`, `created_at`, `phone`) VALUES
-(4, 'Molla', 'mollamdsabit317@gmail.com', '$2y$10$nqb6jPoJHP2IAefp6RqU8Ow9YGrXum26G5SZBGDEMqjfpKITqMDgi', '1234', 'uploads/WhatsApp Image 2024-08-12 at 2.28.41 AM.jpeg', '2024-10-03 19:48:46', '01795859483'),
-(6, 'Sabit', 'alisabit12t@gmail.com', '$2y$10$WDi/tPsJxNKacC02EL9En.DFjpmJn88pDve7dJqDhgXrQ.h9olJdW', '0112121671', 'uploads/Screenshot 2024-09-23 113344.png', '2024-10-04 14:44:58', '0111212121'),
-(7, 'maazzz', 'maaz@gmail.com', '$2y$10$wXIoNj2abIkwS5PncYjCru0AEAGDFwL/yN2vV1/5Gkew4gRrTlWru', '56789', 'uploads/Screenshot 2024-09-23 112738.png', '2024-10-04 17:57:15', '2344567'),
-(8, 'kamrul', 'kamrul@gmail.com', '$2y$10$epbVtnPjT1IGizIB8NLneOqCzYP0RMRF.Ib3SRojaRda6RQgd6aVa', '011212153', 'uploads/Screenshot 2024-09-26 102534.png', '2024-10-04 18:05:56', '01833797597');
+(1, 'Maazz ', 'maazz@gmail.com', '$2y$10$/WfeRMnW2/1ZKLniymVSbekgBoSTyOLvgRibft8bagTrz3aFHEu3y', '12345', 'uploads/Crying cat.png', '2024-10-08 22:11:05', '01795859483'),
+(2, 'Sabit', 'sabit@gmail.com', '$2y$10$h5i1HpfTIKFitqQs2cR.G.PjkB.m3cBuePUwAvrsnAN7gQIEu7..a', '1', 'uploads/Crying cat.png', '2024-10-08 22:19:14', '01833797597'),
+(3, 'kamrul', 'kamrul@gmail.com', '$2y$10$yyVnxtcUwnxG2VGxaRPk0.FSBxed16g7v3JRLTbDA1.97.QGdLMcu', '12', 'uploads/Crying cat.png', '2024-10-08 22:20:12', '01833797597'),
+(4, 'Sabrina', 'sabrina@gmail.com', '$2y$10$BNlEX2afbjHNyZLP1Dia8eI0.n.0egZ1Bw.Y2cCBmliwji69tp9Oy', '011212132', 'uploads/Sad Cat.png', '2024-10-08 23:58:21', '0176543218768');
 
 --
 -- Indexes for dumped tables
@@ -217,15 +181,6 @@ ALTER TABLE `notifications`
   ADD KEY `user_id` (`user_id`);
 
 --
--- Indexes for table `repayments`
---
-ALTER TABLE `repayments`
-  ADD PRIMARY KEY (`repayment_id`),
-  ADD KEY `loan_id` (`loan_id`),
-  ADD KEY `lender_id` (`lender_id`),
-  ADD KEY `fk_loanoffer` (`loanoffer_id`);
-
---
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
@@ -241,25 +196,25 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `contributions`
 --
 ALTER TABLE `contributions`
-  MODIFY `contribution_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `contribution_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `crowdfundings`
 --
 ALTER TABLE `crowdfundings`
-  MODIFY `crowdfunding_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `crowdfunding_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `loanoffers`
 --
 ALTER TABLE `loanoffers`
-  MODIFY `offer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `offer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `loans`
 --
 ALTER TABLE `loans`
-  MODIFY `loan_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `loan_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `notifications`
@@ -268,16 +223,10 @@ ALTER TABLE `notifications`
   MODIFY `notification_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `repayments`
---
-ALTER TABLE `repayments`
-  MODIFY `repayment_id` int(11) NOT NULL AUTO_INCREMENT;
-
---
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- Constraints for dumped tables
@@ -314,14 +263,6 @@ ALTER TABLE `loans`
 --
 ALTER TABLE `notifications`
   ADD CONSTRAINT `notifications_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`);
-
---
--- Constraints for table `repayments`
---
-ALTER TABLE `repayments`
-  ADD CONSTRAINT `fk_loanoffer` FOREIGN KEY (`loanoffer_id`) REFERENCES `loanoffers` (`offer_id`),
-  ADD CONSTRAINT `repayments_ibfk_1` FOREIGN KEY (`loan_id`) REFERENCES `loans` (`loan_id`),
-  ADD CONSTRAINT `repayments_ibfk_2` FOREIGN KEY (`lender_id`) REFERENCES `users` (`user_id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

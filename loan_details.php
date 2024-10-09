@@ -118,8 +118,6 @@ if ($result->num_rows > 0) {
 
             <button onclick="window.history.back()">Back to Loans</button>
             <br>
-            <!-- Corrected the way loan_id is echoed inside the href -->
-            <p>Loan ID: <?php echo htmlspecialchars($loan['loan_id']); ?></p>
             <button onclick="window.location.href='offering.php?loan_id=<?php echo htmlspecialchars($loan['loan_id']); ?>'">Send Offer</button>
         </div>
     </main>
