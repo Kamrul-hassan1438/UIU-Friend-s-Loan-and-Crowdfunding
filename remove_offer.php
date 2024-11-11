@@ -31,7 +31,7 @@ if (isset($_GET['offer_id'])) {
     // Prepare and execute the statement
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("i", $offer_id);
-    
+
     if ($stmt->execute()) {
         // Offer removed successfully
         header("Location: Dashboard.php?message=Offer removed successfully");
@@ -48,4 +48,3 @@ if (isset($_GET['offer_id'])) {
 
 // Close the database connection
 $conn->close();
-?>

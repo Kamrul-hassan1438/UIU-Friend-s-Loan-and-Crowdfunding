@@ -1,9 +1,9 @@
 <?php
 
-$servername = "localhost";  
-$username = "root";         
-$password = "";             
-$dbname = "uiu-friends-loan-and-crowdfunding"; 
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "uiu-friends-loan-and-crowdfunding";
 $conn = new mysqli($servername, $username, $password, $dbname);
 
 // Check connection
@@ -18,7 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $phone = $conn->real_escape_string($_POST['phone']);
     $password = $conn->real_escape_string($_POST['password']);
     $uiu_id = $conn->real_escape_string($_POST['uiu_id']);
-    
+
     // Hash the password
     $password_hash = password_hash($password, PASSWORD_DEFAULT);
 
@@ -57,14 +57,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     // Check if the query was successful
     if ($conn->query($sql) === TRUE) {
-            header("Location: login.html");
-            exit(); 
-        
+        header("Location: login.html");
+        exit();
     } else {
-        echo "Error: " . $sql . "<br>" . $conn->error;
+        echo "Your Email or UIU ID is already registered.";
     }
 }
 
 // Close the connection
 $conn->close();
-?>

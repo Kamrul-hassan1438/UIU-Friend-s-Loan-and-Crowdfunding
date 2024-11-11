@@ -45,6 +45,7 @@ $conn->close();
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -53,6 +54,7 @@ $conn->close();
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/donorHistory.css">
 </head>
+
 <body>
     <header>
         <div>
@@ -70,8 +72,8 @@ $conn->close();
         <div id="container2">
             <h1>Donor History</h1>
             <table>
-                <tr> 
-                    <th>Username</th> 
+                <tr>
+                    <th>Username</th>
                     <th>Contribution Amount (Taka)</th>
                     <th>Time</th>
                 </tr>
@@ -90,7 +92,8 @@ $conn->close();
                 <?php endif; ?>
             </table>
         </div>
-        
+
     </div>
 </body>
+
 </html>

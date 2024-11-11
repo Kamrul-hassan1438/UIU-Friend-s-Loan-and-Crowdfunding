@@ -48,7 +48,7 @@ if (isset($_GET['offer_id'])) {
     $stmt->bind_param("i", $offer_id);
     $stmt->execute();
     $result = $stmt->get_result();
-    
+
     if ($result->num_rows > 0) {
         $offer = $result->fetch_assoc();
 
@@ -56,7 +56,7 @@ if (isset($_GET['offer_id'])) {
         $update_offer_sql = "UPDATE loanoffers SET status = 'accepted' WHERE offer_id = ?";
         $stmt_update_offer = $conn->prepare($update_offer_sql);
         $stmt_update_offer->bind_param("i", $offer_id);
-        
+
         if (!$stmt_update_offer->execute()) {
             echo "Error updating offer status: " . $stmt_update_offer->error;
             exit();
@@ -66,7 +66,7 @@ if (isset($_GET['offer_id'])) {
         $update_loan_sql = "UPDATE loans SET status = 'approved' WHERE loan_id = ?";
         $stmt_update_loan = $conn->prepare($update_loan_sql);
         $stmt_update_loan->bind_param("i", $offer['loan_id']);
-        
+
         if (!$stmt_update_loan->execute()) {
             echo "Error updating loan status: " . $stmt_update_loan->error;
             exit();
@@ -86,4 +86,3 @@ if (isset($_GET['offer_id'])) {
 
 // Close the connection
 $conn->close();
-?>

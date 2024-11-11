@@ -40,7 +40,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $_SESSION['uiu_id'] = $user['uiu_id'];
             $_SESSION['phone'] = $user['phone'];
             $_SESSION['profile_image'] = $user['profile_image'];
-            
+
             // Redirect to the homepage
             header("Location: HomePage.php");
             exit();
@@ -55,4 +55,3 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 }
 
 $conn->close();
-?>

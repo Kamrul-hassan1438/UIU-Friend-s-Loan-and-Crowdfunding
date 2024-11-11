@@ -45,4 +45,3 @@ if ($crowdfunding_id > 0 && $contributor_id > 0 && $contribution_amount > 0) {
 }
 
 $conn->close();
-?>

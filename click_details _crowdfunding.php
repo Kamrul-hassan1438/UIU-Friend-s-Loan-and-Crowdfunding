@@ -36,6 +36,7 @@ $campaign_url = "http://localhost/UIU-Friend-s-Loan-and-Crowdfunding/campaign_de
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -55,11 +56,13 @@ $campaign_url = "http://localhost/UIU-Friend-s-Loan-and-Crowdfunding/campaign_de
             justify-content: center;
             align-items: center;
         }
+
         #child1 img {
             width: 500px;
             height: 260px;
             padding-right: 30px;
         }
+
         #child1 p {
             margin-left: 0;
             width: 700px;
@@ -74,11 +77,13 @@ $campaign_url = "http://localhost/UIU-Friend-s-Loan-and-Crowdfunding/campaign_de
             justify-content: center;
             align-items: center;
         }
+
         #child2 p {
             width: 80%;
             font-size: 1.2em;
             color: #000;
         }
+
         #child2 a {
             color: #fff;
         }
@@ -90,18 +95,22 @@ $campaign_url = "http://localhost/UIU-Friend-s-Loan-and-Crowdfunding/campaign_de
             justify-content: center;
             align-items: center;
         }
+
         table {
             width: 40%;
             display: flex;
             justify-content: center;
         }
+
         tr {
             text-align: center;
             width: 100%;
         }
+
         td {
             padding: 5px;
         }
+
         #child3 button {
             width: 150px;
             height: 45px;
@@ -111,6 +120,7 @@ $campaign_url = "http://localhost/UIU-Friend-s-Loan-and-Crowdfunding/campaign_de
             border: none;
             font-size: 1.6em;
         }
+
         #child3 button:hover {
             background-color: #000;
             color: #fff;
@@ -125,71 +135,74 @@ $campaign_url = "http://localhost/UIU-Friend-s-Loan-and-Crowdfunding/campaign_de
             padding: 10px;
             border-radius: 8px;
         }
+
         .share-options button {
             background: none;
             border: none;
             margin: 5px;
             cursor: pointer;
         }
+
         .share-options button img {
             width: 40px;
             height: 40px;
         }
     </style>
 </head>
+
 <body>
-    
+
 
     <div id="container1">
         <div id="child1">
-            
+
             <img src="<?php echo !empty($campaign['image']) ? $campaign['image'] : 'img/default-campaign.png'; ?>" alt="Campaign Image" />
-            
+
             <p><?php echo htmlspecialchars($campaign['title']); ?></p>
         </div>
 
         <div id="child2">
-            
+
             <p>
                 <?php echo htmlspecialchars($campaign['description']); ?>
                 <br /><br />
-                
+
                 <strong>Target Amount:</strong> <?php echo number_format($campaign['target_amount'], 2); ?> Taka
                 <br />
                 <strong>Collected Amount:</strong> <?php echo number_format($campaign['collected_amount'], 2); ?> Taka
                 <br /><br />
-                
+
                 <a href="donorHistory.php?id=<?php echo $campaign_id; ?>">See donor history</a>
             </p>
         </div>
 
         <div id="child3">
             <table>
-                
+
                 <tr>
 
                     <td>
                         <button onclick="toggleShareOptions()">Share</button>
                         <div class="share-options" id="shareOptions">
-                            
+
                             <button onclick="shareOnFacebook()">
                                 <img src="img/Facebook.png" alt="Facebook">
                             </button>
-                            
+
                             <button onclick="shareOnWhatsApp()">
                                 <img src="img/whatsapp_3938041.png" alt="WhatsApp">
                             </button>
-                            
+
                             <button onclick="shareOnTwitter()">
                                 <img src="img/x.png" alt="Twitter">
                             </button>
-                            
+
                             <button onclick="alert('Instagram sharing requires posting manually.')">
                                 <img src="img/instagram_2504918.png" alt="Instagram">
                             </button>
                         </div>
                     </td>
-                    
+
                     <td><button onclick="window.location.href='donate.php?id=<?php echo $campaign_id; ?>'">Donate</button></td>
                 </tr>
             </table>
@@ -197,7 +210,6 @@ $campaign_url = "http://localhost/UIU-Friend-s-Loan-and-Crowdfunding/campaign_de
     </div>
 
     <script>
-        
         function toggleShareOptions() {
             var shareOptions = document.getElementById('shareOptions');
             shareOptions.style.display = (shareOptions.style.display === 'block') ? 'none' : 'block';
@@ -219,4 +231,5 @@ $campaign_url = "http://localhost/UIU-Friend-s-Loan-and-Crowdfunding/campaign_de
         }
     </script>
 </body>
+
 </html>

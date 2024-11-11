@@ -1,4 +1,4 @@
-<?php 
+<?php
 // Start the session
 session_start();
 
@@ -41,12 +41,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if ($donation_amount > 0) {
         // Add the donation amount to the collected_amount in the database
         $update_query = "UPDATE crowdfundings SET collected_amount = collected_amount + $donation_amount WHERE crowdfunding_id = $campaign_id";
-        
+
         if (mysqli_query($conn, $update_query)) {
             // Store the donation in the contributions table
             $contributor_id = $_SESSION['user_id']; // Assuming the user is logged in
             $insert_query = "INSERT INTO contributions (crowdfunding_id, contributor_id, contribution_amount) VALUES ($campaign_id, $contributor_id, $donation_amount)";
-            
+
             if (mysqli_query($conn, $insert_query)) {
                 $message = "Donation successful. Thank you for your contribution!";
             } else {
@@ -63,6 +63,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -83,15 +84,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
 
         input[type="number"] {
-            -moz-appearance: textfield; /* Hide the up/down arrows in Firefox */
+            -moz-appearance: textfield;
+            /* Hide the up/down arrows in Firefox */
         }
 
         input[type="number"]::-webkit-outer-spin-button,
         input[type="number"]::-webkit-inner-spin-button {
-            -webkit-appearance: none; /* Hide the up/down arrows in WebKit browsers */
+            -webkit-appearance: none;
+            /* Hide the up/down arrows in WebKit browsers */
         }
     </style>
 </head>
+
 <body>
     <div class="payment-container">
         <h1>Donate to: <?php echo htmlspecialchars($campaign['title']); ?></h1>
@@ -119,4 +123,5 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     </div>
 </body>
+
 </html>

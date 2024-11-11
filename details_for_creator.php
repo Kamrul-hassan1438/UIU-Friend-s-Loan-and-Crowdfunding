@@ -44,7 +44,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['target_amount'])) {
     $update_sql = "UPDATE crowdfundings SET target_amount = ?, deadline = ? WHERE crowdfunding_id = ?";
     $update_stmt = $conn->prepare($update_sql);
     $update_stmt->bind_param("dsi", $target_amount, $deadline, $campaign_id);
-    
+
     if ($update_stmt->execute()) {
         // Reload the updated data
         header("Location: details_for_creator.php?id=$campaign_id");
@@ -80,6 +80,7 @@ if (isset($_POST['end_campaign'])) {
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -92,7 +93,7 @@ if (isset($_POST['end_campaign'])) {
             margin: 0;
             padding: 20px;
         }
-        
+
         .container {
             max-width: 800px;
             margin: auto;
@@ -142,10 +143,14 @@ if (isset($_POST['end_campaign'])) {
         }
 
         img {
-            width: 300px; /* Set a fixed width */
-            height: 200px; /* Set a fixed height */
-            object-fit: cover; /* Ensure the image covers the area without distortion */
-            border-radius: 8px; /* Keep rounded corners */
+            width: 300px;
+            /* Set a fixed width */
+            height: 200px;
+            /* Set a fixed height */
+            object-fit: cover;
+            /* Ensure the image covers the area without distortion */
+            border-radius: 8px;
+            /* Keep rounded corners */
         }
 
         a {
@@ -160,6 +165,7 @@ if (isset($_POST['end_campaign'])) {
         }
     </style>
 </head>
+
 <body>
     <div class="container">
         <h2>Campaign Details</h2>
@@ -189,6 +195,7 @@ if (isset($_POST['end_campaign'])) {
         <a href="Dashboard.php">Back to Dashboard</a>
     </div>
 </body>
+
 </html>
 
 <?php

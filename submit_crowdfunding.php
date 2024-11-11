@@ -1,5 +1,5 @@
 <?php
-session_start(); 
+session_start();
 
 $servername = "localhost";
 $username = "root";
@@ -12,7 +12,7 @@ if ($conn->connect_error) {
 if (!isset($_SESSION['user_id'])) {
     die("User not logged in.");
 }
-$user_id = $_SESSION['user_id']; 
+$user_id = $_SESSION['user_id'];
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $title = mysqli_real_escape_string($conn, $_POST['title']);
     $target_amount = mysqli_real_escape_string($conn, $_POST['target_amount']);
@@ -28,7 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $image_path = $target_file;
     }
 
- 
+
     $query = "INSERT INTO crowdfundings (user_id, title, target_amount, description, deadline, image, collected_amount) 
           VALUES ('$user_id', '$title', '$target_amount', '$description', '$deadline', '$image_path', 0)";
 
@@ -38,4 +38,3 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         echo "Error: " . mysqli_error($conn);
     }
 }
-?>

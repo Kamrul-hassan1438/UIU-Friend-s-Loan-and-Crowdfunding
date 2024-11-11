@@ -23,13 +23,13 @@ $user_id = $_SESSION['user_id'];
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $newName = $conn->real_escape_string($_POST['username']);
     $newPhone = $conn->real_escape_string($_POST['phone']);
-    
-    $profile_image = null; 
+
+    $profile_image = null;
 
     if (isset($_FILES['profile_image']) && $_FILES['profile_image']['error'] == 0) {
         $target_dir = "uploads/";
         if (!is_dir($target_dir)) {
-            mkdir($target_dir, 0777, true); 
+            mkdir($target_dir, 0777, true);
         }
 
         $unique_name = $user_id . "_" . time() . "_" . basename($_FILES['profile_image']['name']);
@@ -48,7 +48,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             exit();
         }
 
-        
+
         if (move_uploaded_file($_FILES['profile_image']['tmp_name'], $target_file)) {
             $profile_image = $target_file;
         } else {
@@ -57,7 +57,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
     }
 
-    
+
     if ($profile_image) {
         $sql = "UPDATE users SET username = ?, phone = ?, profile_image = ? WHERE user_id = ?";
         $stmt = $conn->prepare($sql);
@@ -85,4 +85,3 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 
 $conn->close();
-?>

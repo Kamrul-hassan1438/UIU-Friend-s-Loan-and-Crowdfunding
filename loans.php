@@ -1,4 +1,3 @@
-
 <?php
 
 session_start();
@@ -23,18 +22,19 @@ $logged_in_user_id = $_SESSION['user_id'];
 $query = "SELECT loans.loan_id, loans.amount, loans.document, loans.expected_return_date, users.username, users.uiu_id 
           FROM loans
           JOIN users ON loans.user_id = users.user_id
-          WHERE loans.status = 'pending' AND loans.user_id != ?"; 
+          WHERE loans.status = 'pending' AND loans.user_id != ?";
 
 
 $stmt = $conn->prepare($query);
-$stmt->bind_param("i", $logged_in_user_id); 
+$stmt->bind_param("i", $logged_in_user_id);
 $stmt->execute();
-$result = $stmt->get_result(); 
+$result = $stmt->get_result();
 
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -53,7 +53,7 @@ $result = $stmt->get_result();
         .loan-card {
             width: 22%;
             padding: 15px;
-            background-color: rgba(255, 255, 255, 0.2); 
+            background-color: rgba(255, 255, 255, 0.2);
             border-radius: 8px;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
             text-align: center;
@@ -62,9 +62,9 @@ $result = $stmt->get_result();
         }
 
         .loan-card img {
-            width: 100%; 
-            height: 200px; 
-            object-fit: cover; 
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
             border-radius: 8px;
             margin-bottom: 10px;
             display: block;
@@ -94,6 +94,7 @@ $result = $stmt->get_result();
         }
     </style>
 </head>
+
 <body>
     <header>
         <div>
@@ -101,7 +102,7 @@ $result = $stmt->get_result();
         </div>
         <nav>
             <a href="HomePage.php">Home</a>
-            <a href="Donation.html" >Crowdfunding</a>
+            <a href="Donation.html">Crowdfunding</a>
             <a href="Reviews.html">Reviews</a>
             <a href="Dashboard.html">Dashboard</a>
             <a href="login.html">Logout</a>
@@ -111,13 +112,13 @@ $result = $stmt->get_result();
         <div class="loans">
             <?php
             if (mysqli_num_rows($result) > 0) {
-                
+
                 while ($row = mysqli_fetch_assoc($result)) {
                     echo '<div class="loan-card">';
                     echo '<img src="' . (!empty($row['document']) ? $row['document'] : 'img/Intersect.png') . '" alt="Loan Document" />';
-                    echo '<p>' . htmlspecialchars($row['username']) . '</p>'; 
-                    echo '<p>' . htmlspecialchars($row['uiu_id']) . '</p>'; 
-                    echo '<p>' . htmlspecialchars($row['amount']) . ' Taka</p>'; 
+                    echo '<p>' . htmlspecialchars($row['username']) . '</p>';
+                    echo '<p>' . htmlspecialchars($row['uiu_id']) . '</p>';
+                    echo '<p>' . htmlspecialchars($row['amount']) . ' Taka</p>';
                     echo '<button onclick="window.location.href=\'loan_details.php?id=' . $row['loan_id'] . '\'">See Details</button>';
                     echo '</div>';
                 }
@@ -128,4 +129,5 @@ $result = $stmt->get_result();
         </div>
     </main>
 </body>
+
 </html>
